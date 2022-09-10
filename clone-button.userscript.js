@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GitHub Clone Button
+// @name         Clone Button
 // @namespace    https://github.com/bennett-sh
 // @version      1.0
 // @description  Adds a 'Clone'-button to GitHub
@@ -12,16 +12,19 @@
 const $ = s => document.querySelector(s)
 
 function update(path) {
-    // Basic check if it's not a repo
     if(!/\/[a-z0-9\-\_]*\/[a-z0-9\-\_]*/i.test(path)) return
-    
+
     if($(".file-navigation > .clone-button")) return
 
-    // Add clone button
-    $(".file-navigation")?.insertAdjacentHTML('beforeend', `<a class="btn btn-primary ml-2 d-none d-md-block clone-button" data-hotkey="c" href="git-clone://github.com${path}">Clone</a>`)
-    
-    // Make 'Code'-button non-primary
+    $(".file-navigation")?.insertAdjacentHTML('beforeend', `<a class="btn btn-primary ml-2 d-none d-md-block clone-button" data-hotkey="c" href="git-clone://https://github.com${path}">Clone</a>`)
     $("[data-action=\"toggle:get-repo#onDetailsToggle\"] > .btn-primary")?.classList.remove('btn-primary')
 }
 
-setInterval(() => update(window.location.pathname, 1000)
+
+function main() {
+    'use strict';
+
+    update(window.location.pathname)
+}
+
+setInterval(main, 1000)
