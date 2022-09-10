@@ -1,6 +1,7 @@
 
 @echo off
 
+rem UAC Elevation
 NET FILE > NUL 2>&1 || POWERSHELL -ex Unrestricted -Command "Start-Process -Verb RunAs -FilePath '%ComSpec%' -ArgumentList '/c \"%~fnx0\" %*'" && EXIT /b
 
 echo Adding URL protocol.
