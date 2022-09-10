@@ -14,7 +14,7 @@
 1. Clone this repository
 2. Run ```windows/install.bat```
 3. Install any userscript chrome extension like [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
-4. Import/install ```clone-button.userscript.js```
+4. [Install the script](https://github.com/bennett-sh/gh-clone-button/raw/main/clone-button.user.js)
 5. Profit.
 
 ### Screenshots
