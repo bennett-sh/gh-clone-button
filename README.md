@@ -12,11 +12,26 @@
 
 ### Installation
 1. Clone this repository
-2. Run ```windows/install.bat```
+2. Run [```windows/install.bat```](https://github.com/bennett-sh/gh-clone-button/blob/main/windows/install.bat)
 3. Install any userscript chrome extension like [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 4. [Install the script](https://github.com/bennett-sh/gh-clone-button/raw/main/clone-button.user.js)
 5. Profit.
 
 ### Screenshots
 <img src="https://user-images.githubusercontent.com/110846042/189494019-9bacc22a-eb3f-435f-9e84-f9b579ad4381.png" alt="Screenshot of GitHub">
+
+### Customization
+##### Edit [```windows/git-clone.bat```](https://github.com/bennett-sh/gh-clone-button/blob/main/windows/git-clone.bat):
+#### Changing the default folder
+- Replace ```cd %~dp0
+...
+cd %downloads%``` with ```cd YOUR_DIR```
+
+#### Removing the confirmation prompt
+*Warning: this might allow websites/extensions to download malicious files onto your system*
+- Remove
+```
+echo Press ENTER to clone "%repo%"
+set /p confirm=""
+```
 
